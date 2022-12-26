@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+    <title>Generador de Impro-Elementos</title>
+    <script src="generador.js"></script>
+
+</head>
+
+<body>
+
+
+    <h1>Generador de Impro-Elementos</h1>
+
+    <!-- PERSONAJES -->
+
+    <div>
+        <input type="checkbox" id="cb_per_profesiones" name="per_Profesiones" checked>
+        <label for="cb_per_profesiones">Oficios / Profesiones</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="cb_per_animales" name="per_Animales" checked>
+        <label for="cb_per_animales">Animales</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="cb_per_creaturas" name="per_Creaturas" checked>
+        <label for="cb_per_animales">Creaturas fantásticas</label>
+    </div>
+
+    <button class="button" onclick="generar_personaje()">Generar personaje</button>
+
+    <div id="mostrar_personaje">
+        <p>. . .</p>
+    </div>
+
+</body>
+
+</html>

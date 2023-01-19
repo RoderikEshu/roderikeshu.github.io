@@ -1,0 +1,358 @@
+<html>
+
+<head>
+
+    <title>Generador de Impro-Elementos</title>
+    <link rel="stylesheet" href="generador.css">
+    <script src="generador.js"></script>
+
+</head>
+
+<body>
+
+    <center>
+
+        <img class="Logo" src="img/logo.svg" alt="Generador de Impro-Ideas" width="128" height="128">
+
+        <h1>Generador de Impro-Elementos</h1>
+
+    </center>
+
+    <div class="DivIntro">
+
+        <p>Usa las casilas en cada sección para personalizar los criterios con que quieres generar cada elemento y luego
+            pulsa el botón de "Generar" para crearlo. El resultado se pondrá en una caja de texto donde podrás editarlo
+            si así lo deseas.</p>
+
+        <p>Una vez generado, escrito y/o editado el elemento, puedes usar el botón "Agregar a tarjeta" para agregarlo a
+            un
+            contenedor al final de esta página donde podrás ver todos tus elementos en un sólo lugar.</p>
+
+    </div>
+
+
+    <!--PERSONAJES-->
+
+    <div class="DivSeccion">
+
+        <h2 class="h2_personaje" id="Personajes">Personajes</h2>
+
+        <div class="controles">
+
+            <h3>Tipo</h3>
+
+            <input type="checkbox" id="cb_per_animal" name="per_animal">
+            <label for="cb_per_animal">Animales</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_creatura" name="per_creatura">
+            <label for="cb_per_creatura">Creaturas fantásticas</label>
+
+            <h3>Actividad</h3>
+
+            <input type="checkbox" id="cb_per_profesion_c" name="per_profesion_c">
+            <label for="cb_per_profesion_c">Profesión u oficio común</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_profesion_pc" name="per_profesion_pc">
+            <label for="cb_per_profesion_pc">Profesión u oficio poco común</label>
+
+            <h3>Característica</h3>
+
+            <input type="checkbox" id="cb_per_alegria" name="per_alegria">
+            <label for="cb_per_alegria">Sentimiento: Alegría</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_tristeza" name="per_tristeza">
+            <label for="cb_per_tristeza">Sentimiento: Tristeza</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_disgusto" name="per_disgusto">
+            <label for="cb_per_disgusto">Sentimiento: Disgusto</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_ira" name="per_ira">
+            <label for="cb_per_ira">Sentimiento: Ira</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_miedo" name="per_miedo">
+            <label for="cb_per_miedo">Sentimiento: Miedo</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_sorpresa" name="per_sorpresa">
+            <label for="cb_per_sorpresa">Sentimiento: Sorpresa</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_per_adjetivo" name="inc_adjetivo">
+            <label for="cb_per_atributof">Atributo físico</label>
+
+        </div>
+
+        <div class="Generar">
+
+            <button class="btn_personaje" id="btn_personaje" onclick="generar_personaje()">Generar
+                personaje</button>
+
+            <br><br>
+
+            <input type="text" id="tx_personaje" name="tx_personaje" class="tx_personaje"
+                placeholder="Escribe tu propio personaje">
+
+            <br><br>
+
+            <button class="btn_personaje" id="btn_tarjeta_per" onclick="agregar_a_tarjeta('personaje')">Agregar
+                personaje a tarjeta</button>
+
+            <br><br>
+
+            <label id="lbl_personaje"></label>
+
+            <br><br>
+
+            <a class="aTarjeta" href="#Tarjeta">Ver tarjeta</a>
+
+        </div>
+
+
+
+    </div>
+
+    <!--LUGARES-->
+
+    <div class="DivSeccion">
+
+        <h2 class="h2_lugar" id="Lugares">Lugares</h2>
+
+        <div class="controles">
+
+            <input type="checkbox" id="cb_lug_casa" name="lug_casa">
+            <label for="cb_lug_casa">Partes de una casa-hogar</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_lug_bioma" name="lug_bioma">
+            <label for="cb_lug_biomas">Biomas / Naturaleza</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_lug_publico" name="lug_publico">
+            <label for="cb_lug_publicos">Públicos</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_lug_comercio" name="lug_comercio">
+            <label for="cb_lug_comercios">Comercios / Laborales / Oficinas</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_lug_transporte" name="lug_transporte">
+            <label for="cb_lug_transporte">Transportes</label>
+
+            <br>
+
+            <input type="checkbox" id="cb_lug_fantastico" name="lug_fantastico">
+            <label for="cb_lug_fantastico">Fantásticos / Ciencia ficción</label>
+
+        </div>
+
+        <div class="Generar">
+
+            <button class="btn_lugar" id="btn_lugar" onclick="generar_lugar()">Generar lugar</button>
+
+            <br><br>
+
+            <input type="text" id="tx_lugar" name="tx_lugar" class="tx_lugar" placeholder="Escribe tu propio lugar">
+
+            <br><br>
+
+            <button class="btn_lugar" id="btn_tarjeta_lugar" onclick="agregar_a_tarjeta('lugar')">Agregar
+                lugar a tarjeta</button>
+
+            <br><br>
+
+            <label id="lbl_lugar"></label>
+
+            <br><br>
+
+            <a class="aTarjeta" href="#Tarjeta">Ver tarjeta</a>
+
+        </div>
+
+    </div>
+
+    <!--GÉNEROS-->
+
+    <div class="DivSeccion">
+
+        <h2 class="h2_genero" id="Generos">Géneros</h2>
+
+        <div class="Generar">
+
+            <button class="btn_genero" id="btn_genero" onclick="generar_genero()">Proponer género</button>
+
+            <br><br>
+
+            <input type="text" id="tx_genero" name="tx_genero" class="tx_genero" placeholder="Escribe tu propio género">
+
+            <br><br>
+
+            <button class="btn_genero" id="btn_tarjeta_genero" onclick="agregar_a_tarjeta('genero')">Agregar
+                género a tarjeta</button>
+
+            <br><br>
+
+            <label id="lbl_genero"></label>
+
+            <br><br>
+
+            <a class="aTarjeta" href="#Tarjeta">Ver tarjeta</a>
+
+        </div>
+
+    </div>
+
+    <!--SITUACIONES DRAMÁTICAS-->
+
+    <div class="DivSeccion">
+
+        <h2 class="h2_sidra" id="Situaciones_Dramaticas">Situaciones dramáticas</h2>
+
+        <p>Las treinta y seis situaciones dramáticas (1895) es el título de un ensayo y la denominación de una teoría
+            sobre
+            poética teatral propuesta por el francés Georges Polti (1867-1946) según la cual en la escena teatral sólo
+            son
+            posibles 36 situaciones elementales, fundamentales o básicas.</p>
+
+        <button class="btn_sidra" id="btn_sidra" onclick="generar_sidra()">Generar situación
+            dramática</button><br>
+
+        <div class="tarjeta_sidra" id="div_sidra">
+
+            <br>
+            <center><b>Título: </b></center><br>
+            <div id="sidra_titulo" class="div_sidra"></div>
+
+            <br>
+            <center><b>Agentes: </b></center><br>
+            <div id="sidra_personajes" class="div_sidra"></div>
+
+            <br>
+            <center><b>Descripción: </b></center><br>
+            <div id="sidra_descripcion" class="div_sidra"></div>
+
+        </div>
+
+        Esta sección no admite edición del elemento generado.<br><br>
+
+        <button class="btn_sidra" id="btn_tarjeta_sidra" onclick="agregar_div_tarjeta('sidra','sidra_titulo')">Agregar
+            género a tarjeta</button>
+
+        <br><br>
+
+        <label id="lbl_sidra"></label>
+
+        <br><br>
+
+        <a class="aTarjeta" href="#Tarjeta">Ver tarjeta</a>
+
+        <br><br>
+
+    </div>
+
+    <!--TARJETA-->
+
+    <div class="base_tarjetas" id="base_tarjetas">
+
+        <a id="Tarjeta">
+
+            <center><img src="img/tarjeta.svg" alt="Tu tarjeta de Impro-Ideas" width="64" height="64"></center>
+
+            <h2 class="h2_tarjeta">Tarjeta</h2>
+
+        </a>
+
+
+        <center>
+
+            <br>
+
+            <input type="text" id="tx_nota" name="tx_nota" class="tx_nota" placeholder="Escribe una nota o comentario">
+
+            <br><br>
+
+            <button class="btn_nota" id="btn_nota" onclick="agregar_a_tarjeta('nota')">Agregar nota</button><br>
+
+        </center>
+
+
+        <div class="contenedor_tarjetas" id="contenedor_tarjetas"></div>
+
+        <center>
+
+            <br>
+
+            Da clic en el icono <img src='img/eliminar.svg' alt='eliminar' width='16px' height='16px'></img> para
+            eliminar un elemento individual; o puedes:
+
+            <button class="btn_vaciar" id="btn_vaciar" onclick="vaciar_tarjeta()">Vaciar la tarjeta</button><br>
+
+            <br>
+
+            <!--Exportar como PDF-->
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+                integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+                crossorigin="anonymous">
+                </script>
+
+            <script>
+                function exportPDF() {
+                    var pdf = new jsPDF();
+                    var elementHTML = document.getElementById("base_tarjetas").innerHTML;
+                    var specialElementHandlers = { '#elementH': function (element, renderer) { return true; } };
+                    pdf.fromHTML(elementHTML, 15, 15, { 'width': 170, 'elementHandlers': specialElementHandlers });
+                    pdf.save("Generador de Improideas.pdf");
+                }
+            </script>
+
+            <!--<button onclick="exportPDF()">Export tarjeta como PDF</button>-->
+
+        </center>
+
+    </div>
+
+
+
+    <div class="DivPost">
+
+        Ir a: <br>
+        <a href="#Personajes">Personajes</a><br>
+        <a href="#Lugares">Lugares</a><br>
+        <a href="#Generos">Géneros</a><br>
+        <a href="#Situaciones_Dramaticas">Situaciones dramáticas</a><br>
+
+    </div>
+
+
+    <!--FOOTER-->
+
+    <center>
+
+        <p><img class="Avatar" src="img/roderik.jpg" alt="Roderik Eshu" width="64" height="64"></p>
+
+        <b>Herramienta creada por Rodrigo Espinosa Huerta</b><br>
+        Sugerencias y comentarios: <a href="mailto:roderik.eshu@gmail.com">roderik.eshu@gmail.com</a><br><br>
+
+    </center>
+
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+body {
+    background-image: url("img/fondo.png");
+    background-size: 500px 500px;
+    background-color: #030114;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+}
+
+select {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px;
+}
+
+ul {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+    text-align: left;
+}
+
+h1 {
+    color: rgb(204, 231, 85);
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+
+.h2_personaje {
+    text-align: center;
+    margin-top: 0px;
+    color: #44c;
+}
+
+.h2_lugar {
+    text-align: center;
+    margin-top: 0px;
+    color: #4a4;
+}
+
+.h2_genero {
+    text-align: center;
+    margin-top: 0px;
+    color: rgb(226, 202, 62);
+}
+
+.h2_sidra {
+    text-align: center;
+    margin-top: 0px;
+    color: rgb(146, 3, 3);
+}
+
+.h2_tarjeta {
+    text-align: center;
+    margin-top: 0px;
+    color: #4B0D7D
+}
+
+h3 {
+    text-align: center;
+}
+
+.Logo {
+    margin-top: 30px;
+}
+
+.Avatar {
+    border-radius: 50%;
+}
+
+a {
+    color: #ccccff;
+}
+
+.aTarjeta {
+    color: #44c;
+}
+
+.btn_personaje {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    background-color: #44c;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn_personaje:active {
+    background-color: #000;
+}
+
+.tx_personaje {
+    background-color: #ccccff;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 400px;
+    padding: 15px;
+}
+
+.tx_lugar {
+    background-color: #ccffcc;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 400px;
+    padding: 15px;
+}
+
+.tx_genero {
+    background-color: #fcfda1;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 400px;
+    padding: 15px;
+}
+
+.tx_nota {
+    background-color: #ccc;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 400px;
+    padding: 15px;
+}
+
+.btn_lugar {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    background-color: #4a4;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn_lugar:active {
+    background-color: #000;
+}
+
+.btn_genero {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    background-color: rgb(226, 202, 62);
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn_genero:active {
+    background-color: #000;
+    color: white
+}
+
+.btn_sidra {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    background-color: rgb(146, 3, 3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn_sidra:active {
+    background-color: #000;
+    color: white
+}
+
+.DivIntro {
+    color: white;
+    width: 65%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.DivSeccion {
+    background-color: white;
+    color: black;
+    width: 90%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 45px;
+    text-align: center;
+    align-items: center;
+}
+
+.DivPost {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.controles {
+    width: fit-content;
+    text-align: left;
+    margin: 0 auto;
+    color: black;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.generar {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.tarjeta_personaje {
+    background-color: #ccccff;
+    color: black;
+    width: 54%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.tarjeta_lugar {
+    background-color: #ccffcc;
+    color: black;
+    width: 54%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.tarjeta_genero {
+    background-color: #fcfda1;
+    color: black;
+    width: 54%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.tarjeta_sidra {
+    background-color: rgb(233, 172, 172);
+    color: black;
+    width: 54%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.div_sidra {
+    width: fit-content;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.tarjeta_nota {
+    background-color: #ccc;
+    color: black;
+    width: 54%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.base_tarjetas {
+    width: 50%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    padding-top: 35px;
+    align-items: center;
+}
+
+.eliminar {
+    margin-right: 30px;
+}

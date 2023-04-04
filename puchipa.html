@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pu-chi-pa</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url("img/fondo.png");
+            background-size: 500px 500px;
+            background-color: #030114;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+            color: whitesmoke;
+        }
+
+        h1 {
+            color: rgb(204, 231, 85);
+            align-items: center;
+            margin-bottom: 0px;
+        }
+
+        a {
+            color: #ccccff;
+        }
+
+        * {
+            margin: auto;
+        }
+
+        .Logo {
+            margin-top: 30px;
+        }
+
+        .mostrar {
+            margin-top: 30px;
+            height: 320px;
+            width: 320px;
+            display: flex;
+            align-items: center;
+            border-color: rgb(204, 231, 85);
+            background-color: black;
+            border-width: 3px;
+            border-radius: 10px;
+        }
+
+        .Avatar {
+            margin-top: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img class="Logo" src="img/metronomo.svg" alt="Generador de Impro-Ideas" width="64" height="64">
+
+    <h1>¡Pu-chi-pa!</h1><br>
+
+
+    <div>
+        Patrón:<br>
+        <select id="patron">
+            <option value="p4">4 tiempos</option>
+            <option value="p8">8 tiempos</option>
+        </select>
+
+        <br><br>
+
+
+        Velocidad:<br>
+        <button id="menos_30">-30</button>
+        <button id="menos_10">-10</button>
+        <button id="menos_1">-1</button>
+        <label id="velocidad">120 bpm</label>
+        <button id="mas_1">+1</button>
+        <button id="mas_10">+10</button>
+        <button id="mas_30">+30</button>
+
+        <br><br>
+
+        <button id="activar">Iniciar</button>
+    </div><br>
+
+    <div id="contenedor" class="mostrar">
+        <img src="recursos/apagado.png">
+    </div>
+
+    <div id="marcador">Apagado</div>
+
+    <p><img class="Avatar" src="img/roderik.jpg" alt="Roderik Eshu" width="64" height="64"></p>
+
+    <b>Herramienta creada por Rodrigo Espinosa Huerta</b><br>
+    Sugerencias y comentarios: <a href="mailto:roderik.eshu@gmail.com">roderik.eshu@gmail.com</a><br><br>
+
+    <script>
+
+        var btnActivar = document.getElementById("activar");
+        var listaPatron = document.getElementById("patron");
+        var lblVelocidad = document.getElementById("velocidad");
+        var me30 = document.getElementById("menos_30");
+        var me10 = document.getElementById("menos_10");
+        var me1 = document.getElementById("menos_1");
+        var ma1 = document.getElementById("mas_1");
+        var ma10 = document.getElementById("mas_10");
+        var ma30 = document.getElementById("mas_30");
+
+        var Reproduciendo = false;
+        var timeoutId;
+        var vel = 120;
+        var img4 = ['41.png', '42.png', '43.png', '44.png'];
+        var son4 = ['41_pu.mp3', '42_chi.mp3', '43_pa.mp3', '44_chi.mp3'];
+        var sec4 = ['1 - Pu', '2 - Chi', '3 - Pa', '4 - Chi'];
+        var img8 = ['81.png', '82.png', '83.png', '84.png', '85.png', '86.png', '87.png', '88.png'];
+        var son8 = ['81_pu.mp3', '82_chi.mp3', '83_pa.mp3', '84_pu.mp3', '85_pu.mp3', '86_chi.mp3', '87_pa.mp3', '88_chi.mp3'];
+        var sec8 = ['1 - Pu', '2 - Chi', '3 - Pa', '4 - Pu', '5 - Pu', '6 - Chi', '7 - Pa', '8 - Chi'];
+        var index = 0;
+        var audio = new Audio();
+
+        btnActivar.addEventListener('click', function () {
+            if (!Reproduciendo) {
+                btnActivar.innerHTML = 'Detener';
+                listaPatron.disabled = true
+                Reproduciendo = true;
+                nva_vel = 60000 / vel;
+                index = 0
+
+                var lispat = document.getElementById("patron");
+                var selec = lispat.options[lispat.selectedIndex].value;
+                if (selec === 'p4') {
+                    playAnimation(img4, son4, sec4, nva_vel);
+                }
+                else {
+                    playAnimation(img8, son8, sec8, nva_vel);
+                }
+
+
+
+            } else {
+                clearTimeout(timeoutId);
+                btnActivar.innerHTML = 'Iniciar';
+                Reproduciendo = false;
+                listaPatron.disabled = false
+                document.getElementById('contenedor').innerHTML = '<img src="recursos/apagado.png">';
+                document.getElementById('marcador').innerHTML = 'Apagado';
+            }
+        });
+
+        function playAnimation(imag, soni, secu, velo) {
+            if (index >= imag.length) {
+                index = 0;
+            }
+
+            document.getElementById('contenedor').innerHTML = '<img src="recursos/' + imag[index] + '">';
+            document.getElementById('marcador').innerHTML = secu[index];
+            audio.src = 'recursos/' + soni[index];
+            audio.play();
+            index++;
+            nva_vel = 60000 / vel
+            timeoutId = setTimeout(function () {
+                playAnimation(imag, soni, secu, nva_vel);
+            }, nva_vel);
+        }
+
+        me30.addEventListener('click', function () {
+            vel -= 30;
+            if (vel < 30) {
+                vel = 30
+            }
+            lblVelocidad.innerHTML = vel + ' bpm';
+        });
+
+        me10.addEventListener('click', function () {
+            vel -= 10;
+            if (vel < 30) {
+                vel = 30
+            }
+            lblVelocidad.innerHTML = vel + ' bpm';
+        });
+
+        me1.addEventListener('click', function () {
+            vel -= 1;
+            if (vel < 30) {
+                vel = 30
+            }
+            lblVelocidad.innerHTML = vel + ' bpm';
+        });
+
+        ma1.addEventListener('click', function () {
+            vel += 1;
+            if (vel > 240) {
+                vel = 240
+            }
+            lblVelocidad.innerHTML = vel + ' bpm';
+        });
+
+        ma10.addEventListener('click', function () {
+            vel += 10;
+            if (vel > 240) {
+                vel = 240
+            }
+            lblVelocidad.innerHTML = vel + ' bpm';
+        });
+
+        ma30.addEventListener('click', function () {
+            vel += 30;
+            if (vel > 240) {
+                vel = 240
+            }
+            lblVelocidad.innerHTML = vel + ' bpm';
+        });
+
+    </script>
+
+</body>
+
+</html>
